@@ -1,0 +1,43 @@
+[build-system]
+requires = [
+    "setuptools",
+    "wheel",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "test-project"
+version = "0.0.9"
+requires-python = ">=3.10"
+
+[tool.setuptools.packages.find]
+exclude = [
+    "ext",
+]
+
+[project.optional-dependencies]
+tests = [
+    "coverage[toml]",
+    "pytest",
+    "pytest-html",
+    "pytest-html-reporter",
+]
+
+[[project.authors]]
+name = "Test"
+email = "test@test.com"
+
+[tool.coverage.run]
+parallel = true
+branch = true
+source = [
+    "test_project",
+]
+
+[tool.coverage.paths]
+source = [
+    ".tox/*/site-packages",
+]
+
+[tool.coverage.report]
+show_missing = true

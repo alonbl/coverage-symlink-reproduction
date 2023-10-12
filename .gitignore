@@ -1,0 +1,12 @@
+*.egg-info/
+*.log
+*.old
+*.out
+*.pyc
+*.swp
+*~
+build
+.coverage*
+.tox/
+__pycache__/
+dist
